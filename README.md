@@ -2,7 +2,7 @@
 
 Welcome to the source code of my personal developer portfolio — a responsive, fast, and clean website built with **React.js**, showcasing my skills, experience, and contact details.
 
-[🔗 Live Site](https://vandanpatel.vercel.app) | [📫 Contact Me](mailto:vandan8154@gmail.com)
+[🔗 Live Site](https://vandanbpatel.vercel.app) | [📫 Contact Me](mailto:vandan8154@gmail.com)
 
 ---
 
