@@ -1,0 +1,229 @@
+@import url('https://api.fontshare.com/v2/css?f[]=sentient@900,900i&display=swap');
+
+/* -------------------- Container -------------------- */
+.intro-box {
+  background-color: var(--card);
+  padding: 3rem 2rem 0rem 2rem;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 20px;
+  margin: 8rem auto 1rem auto;
+  width: 100%;
+}
+
+.intro-content {
+  flex: 1;
+  max-width: 100%;
+}
+
+/* -------------------- Icon Wrapper -------------------- */
+.intro-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------------------- Button Styles -------------------- */
+.intro-icons button,
+.elevated-button {
+  padding: 0.8rem 0.9rem;
+  background-color: #000;
+  color: var(--icon);
+  font-family: var(--font-pixel);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #232323;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 1.5px -1.5px 4px #474747, 2px 2px 4px #111;
+}
+
+.intro-icons button:hover,
+.elevated-button:hover {
+  box-shadow: 1.5px -1.5px 4px #686868, 2px 2px 6px #000;
+  background-color: #181818;
+  transform: scale(1.03);
+}
+
+/* -------------------- Email Icon Logic -------------------- */
+.email-button {
+  position: relative;
+  width: 50px;
+  height: 48px;
+  border: 1px solid #232323;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 1.5px -1.5px 4px #474747, 2px 2px 4px #111;
+}
+
+.email-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.visible-icon {
+  opacity: 1;
+}
+
+.hidden-icon {
+  opacity: 0;
+}
+
+/* -------------------- WhatsApp Animation -------------------- */
+.whatsapp-icon {
+  animation: bounceWhatsApp 0.5s ease-in-out;
+}
+
+.whatsapp-anim {
+  animation: bounceWhatsApp 0.4s ease;
+}
+
+@keyframes bounceWhatsApp {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* -------------------- CV Button -------------------- */
+.cv-button {
+  flex-direction: column;
+  height: 48px;
+  width: 54px;
+  padding: 0;
+  border: 1px solid #232323;
+  background-color: #000;
+  box-shadow: 1.5px -1.5px 4px #474747, 2px 2px 4px #111;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
+}
+
+.cv-label-up {
+  transform: translateY(-10px);
+  opacity: 0.7;
+  font-size: 1rem;
+}
+
+.cv-download-icon {
+  position: absolute;
+  bottom: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bounce-down {
+  opacity: 1;
+  animation: bounceDownload 0.6s ease-in-out infinite;
+}
+
+@keyframes bounceDownload {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* -------------------- Hover Labels -------------------- */
+.hover-label {
+  position: absolute;
+  top: 110%;
+  white-space: nowrap;
+  color: #676767;
+  padding: 2px 6px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(4px);
+  pointer-events: none;
+  z-index: 5;
+  font-family: 'Press Start 2P';
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hover-label.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- Text Content -------------------- */
+h1 {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: 'Playfair Display', serif;
+  font-weight: 100;
+  letter-spacing: 0.5px;
+}
+
+p {
+  color: var(--text-dark);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.right {
+  font-family: 'Sentient', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--text-light);
+
+}
+
+.intro-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.robot-img {
+  width: 190px;
+  height: auto;
+  margin-bottom: 0rem;
+  align-self: flex-end;
+  display: block;
+  margin-left: auto;
+  image-rendering: pixelated;
+  /* if it's a pixel-style robot */
+}

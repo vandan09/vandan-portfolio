@@ -1,0 +1,77 @@
+.skills-slider {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem auto 0rem;
+  border-radius: 20px;
+  background-color: var(--card);
+  padding: 1rem 2rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider-text {
+  color: var(--text-dark);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  z-index: 2; 
+}
+
+.slider-container {
+  overflow: hidden;
+  flex: 1;
+  position: relative;
+}
+
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--card), transparent);
+}
+
+.slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--card), transparent);
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 1.5rem;
+  opacity: 0.85;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.skill-icon:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

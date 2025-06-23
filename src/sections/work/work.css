@@ -1,0 +1,17 @@
+.work-navigator {
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.work-grid {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    background-color: var(--card);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+}

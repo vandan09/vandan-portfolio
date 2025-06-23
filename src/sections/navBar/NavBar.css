@@ -1,0 +1,87 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: transparent;
+    max-width: 800px;
+    padding: 1rem 2rem;
+    margin: 1.5rem auto;
+    border-radius: 20px;
+}
+
+.navbar-content {
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+
+.name {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    letter-spacing: 0.8px;
+    font-weight: 200;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-left: 0.5rem;
+}
+
+.dot {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin: 0 0.3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: var(--font-pixel);
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
