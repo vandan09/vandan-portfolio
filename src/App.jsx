@@ -6,7 +6,7 @@ import Contact from "./sections/contact/contact";
 import Info from "./sections/info/info";
 import Experience from "./sections/experience/Experience";
 import './App.css';
-import Work from "./sections/work/work";
+import Work from "./sections/work/Work";
 
 const App = () => {
   const canvasRef = useRef(null);
