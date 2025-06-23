@@ -13,8 +13,6 @@ const skillLogos = [
   '/skills/aws.png',
   '/skills/git.png',
   '/skills/github.png',
-
-
 ];
 
 const SkillsSlider = () => {
