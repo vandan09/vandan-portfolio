@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './IntroBox.css';
 import { FiDownload } from 'react-icons/fi';
 import { HiOutlineMail, HiOutlineMailOpen } from 'react-icons/hi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 const IntroBox = () => {
   const [hovered, setHovered] = useState("");
@@ -10,6 +11,7 @@ const IntroBox = () => {
   const email = 'vandan8154@email.com';
   const driveLink = 'https://drive.google.com/file/d/1HBXYq87JI5IR-Z9q1Ls4hpDmaIk35tnX/view?usp=sharing';
   const whatsappLink = 'https://wa.me/8154935889';
+  const linkedInLink = 'https://www.linkedin.com/in/patel-vandan/';
 
   const handleWhatsAppClick = () => {
     window.open(whatsappLink, '_blank');
@@ -37,7 +39,25 @@ const IntroBox = () => {
       <div className="intro-content">
         <div className="intro-icons">
 
-          {/* Email Button */}
+          <div
+            className="button-container"
+            onMouseEnter={() => setHovered("linkedin")}
+            onMouseLeave={() => setHovered("")}
+          >
+            <button
+              className="elevated-button"
+              onClick={() => window.open(linkedInLink, '_blank')}
+            >
+              <FaLinkedinIn
+                size={20}
+                className={`icon ${hovered === "linkedin" ? "whatsapp-anim" : ""}`}
+              />
+            </button>
+            <span className={`hover-label ${hovered === "linkedin" ? "visible" : ""}`}>
+              VISIT MY LINKEDIN
+            </span>
+          </div>
+
           <div
             className="button-container"
             onMouseEnter={() => setHovered("email")}

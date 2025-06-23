@@ -1,63 +1,69 @@
+/* Global container */
 .body-container {
-  max-width: 800px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  align-items: center;
-}
-.body-container {
-  position: relative;
+  padding: 0 1rem;
   width: 100vw;
-  height: 100%;
-  overflow-x: hidden;
+  min-height: 100vh;
   background-color: #000;
+  overflow-x: hidden;
+  position: relative;
 }
 
+/* Canvas stays fixed and full screen */
 .background-canvas {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
 }
 
+/* Main area content centered and responsive */
 .main-area {
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding: 1rem;
 }
+
+/* Custom cursor logic */
 .hide-system-cursor {
   cursor: url('/pencile.png'), auto;
-  
 }
 
 .custom-cursor {
   position: fixed;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background-image: url('/pencile.png');
-  margin-bottom: 4rem;
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   display: none;
-  color: var(--card);
 }
 
-.background-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
+/* Disable text selection during drawing */
 .no-select {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .custom-cursor {
+    width: 40px;
+    height: 40px;
+  }
+
+  .main-area {
+    padding: 0.5rem;
+  }
 }

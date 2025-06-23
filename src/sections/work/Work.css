@@ -15,3 +15,9 @@
     border-radius: 20px;
     text-align: center;
 }
+@media (max-width: 600px) {
+  .work-grid {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}

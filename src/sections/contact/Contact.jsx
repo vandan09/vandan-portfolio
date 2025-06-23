@@ -136,7 +136,7 @@ const Contact = () => {
             </div>
 
             <footer className="footer">
-                <p>© 2025 Vandan Patel. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Vandan Patel. All rights reserved.</p>
             </footer>
         </section>
     );

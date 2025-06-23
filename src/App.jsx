@@ -14,67 +14,71 @@ const App = () => {
   const [showCursor, setShowCursor] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
 
-useEffect(() => {
-  const canvas = canvasRef.current;
-  const ctx = canvas.getContext("2d");
+    const size = 14;
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  ctx.imageSmoothingEnabled = false;
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.imageSmoothingEnabled = false;
+    };
 
-  const size = 14;
+    setCanvasSize(); // initial size
 
-  const drawPixelBlock = (x, y) => {
-    const gridX = Math.floor(x / size) * size;
-    const gridY = Math.floor(y / size) * size;
-    ctx.fillStyle = "#343434";
-    ctx.fillRect(gridX, gridY, size, size);
-  };
+    const drawPixelBlock = (x, y) => {
+      const gridX = Math.floor(x / size) * size;
+      const gridY = Math.floor(y / size) * size;
+      ctx.fillStyle = "#343434";
+      ctx.fillRect(gridX, gridY, size, size);
+    };
 
-  let isDrawing = false;
+    let isDrawing = false;
 
-  const handleMouseDown = () => {
-    isDrawing = true;
-    setIsDrawing(true); // only for style / no-select
-  };
+    const handleMouseDown = () => {
+      isDrawing = true;
+      setIsDrawing(true);
+    };
 
-  const handleMouseUp = () => {
-    isDrawing = false;
-    setIsDrawing(false);
-  };
+    const handleMouseUp = () => {
+      isDrawing = false;
+      setIsDrawing(false);
+    };
 
-  const handleMouseMove = (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
+    const handleMouseMove = (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
 
-    const isOutsideMain =
-      x < window.innerWidth / 2 - 400 || x > window.innerWidth / 2 + 400;
+      const isOutsideMain =
+        x < window.innerWidth / 2 - 400 || x > window.innerWidth / 2 + 400;
 
-    setShowCursor(isOutsideMain);
+      setShowCursor(isOutsideMain);
 
-    if (cursorRef.current) {
-      cursorRef.current.style.left = `${x}px`;
-      cursorRef.current.style.top = `${y}px`;
-      cursorRef.current.style.display = isOutsideMain ? "block" : "none";
-    }
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${x}px`;
+        cursorRef.current.style.top = `${y}px`;
+        cursorRef.current.style.display = isOutsideMain ? "block" : "none";
+      }
 
-    if (isDrawing) {
-      drawPixelBlock(x, y);
-    }
-  };
+      if (isDrawing) {
+        drawPixelBlock(x, y);
+      }
+    };
 
-  window.addEventListener("mousedown", handleMouseDown);
-  window.addEventListener("mouseup", handleMouseUp);
-  window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", setCanvasSize); // update on resize
 
-  // ✅ Clean up
-  return () => {
-    window.removeEventListener("mousedown", handleMouseDown);
-    window.removeEventListener("mouseup", handleMouseUp);
-    window.removeEventListener("mousemove", handleMouseMove);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", setCanvasSize);
+    };
+  }, []);
 
 
 

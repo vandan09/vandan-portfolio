@@ -227,3 +227,55 @@ p {
   image-rendering: pixelated;
   /* if it's a pixel-style robot */
 }
+/* Responsive fix for intro section */
+@media (max-width: 600px) {
+  .intro-box {
+    padding: 2rem 1rem 1rem 1rem;
+    margin: 6rem auto 1rem auto;
+    border-radius: 16px;
+  }
+
+  .intro-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .intro-text h1 {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .intro-text p {
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+  }
+
+  .robot-img {
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .intro-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hover-label {
+    font-size: 0.45rem;
+    top: 100%;
+  }
+
+  .cv-label {
+    font-size: 1.1rem;
+  }
+
+  .cv-label-up {
+    font-size: 0.9rem;
+  }
+}

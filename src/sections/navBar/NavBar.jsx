@@ -3,17 +3,12 @@ import './NavBar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,16 +18,22 @@ const Navbar = () => {
       <div className="navbar-content">
         <div className="navbar-brand">
           <img src="/robot_wave.png" alt="Bot" className="brand-avatar" />
-          <div className="name">
-            Vandan Patel <span className="dot">•</span>
-            <span className="role">Software Developer</span>
+          <div className="name-role-group">
+            <div className="name">Vandan Patel <span className="dot">•</span></div>
+            <div className="role">Software Developer</div>
           </div>
         </div>
-        <ul className="nav-links">
-          <li><a href="#work">WORK</a></li>
-          <li><a href="#info">INFO</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
+
+        <div className="menu-wrapper">
+          <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </div>
+          <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <li><a href="#info" onClick={() => setMenuOpen(false)}>INFO</a></li>
+            <li><a href="#work" onClick={() => setMenuOpen(false)}>WORK</a></li>
+            <li><a href="#contact" onClick={() => setMenuOpen(false)}>CONTACT</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

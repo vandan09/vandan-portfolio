@@ -1,65 +1,91 @@
 .info-section {
-    margin: 3rem auto 0;
-    padding: 2rem 0;
-}
-
-
-.navigator {
-    color: var(--text-dark);
-    margin-bottom: 2rem;
-    font-family: var(--font-pixel);
-    font-size: 1.2rem;
-    font-weight: 600;
+  margin: 3rem auto 0;
+  padding: 2rem 0;
+  max-width: 800px;
+  width: 100%;
 }
 
 .info-content {
-    display: flex;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .info-text {
-    width: 60%;
-    height: 25rem;
-    padding: 2rem;
-    background-color: var(--card);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    gap: 1rem;
+  width: 60%;
+  height: 25rem;
+  padding: 2rem;
+  background-color: var(--card);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 1rem;
 }
 
 .info-text p {
-    font-size: 1rem;
-    color: var(--text-dark);
-    margin: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin: 0;
 }
 
 .info-header {
-    font-size: 1.3rem;
-    color: var(--text-light);
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin: 0;
+  font-family: 'Playfair Display', serif;
 }
 
 .info-img {
-    width: 40%;
-    height: 25rem;
-    justify-content: center;
-    align-items: start;
-    box-sizing: border-box;
+  width: 40%;
+  height: 25rem;
 }
 
 .slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* ----------------- RESPONSIVE FIX ------------------ */
+@media (max-width: 768px) {
+  .info-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .info-text,
+  .info-img {
     width: 100%;
     height: 25rem;
     object-fit: cover;
     border-radius: 20px;
     transition: opacity 0.5s ease-in-out;
     align-self: stretch;
+    height: auto;
+  }
+
+  .info-text {
+    padding: 1.5rem 1rem;
+    height: auto;
+    text-align: center;
+  }
+
+  .info-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .info-header {
+    font-size: 1.2rem;
+  }
+
+  .slider-image {
+    max-height: 300px;
+    height: auto;
+  }
 }
