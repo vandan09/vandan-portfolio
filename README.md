@@ -1,12 +1,38 @@
-# React + Vite
+# 🧠 Vandan Patel | Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the source code of my personal developer portfolio — a responsive, fast, and clean website built with **React.js**, showcasing my skills, experience, and contact details.
 
-Currently, two official plugins are available:
+[🔗 Live Site](https://vandanpatel.vercel.app) | [📫 Contact Me](mailto:vandan8154@gmail.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚡ Fully responsive for all screen sizes (mobile, tablet, desktop)
+- 🧠 Skills carousel with animated tech stack
+- 🖼️ Image slider with personal photos
+- 🧾 Experience cards with company, role, and time period
+- 📧 Contact form with **EmailJS** integration
+- 📄 Dynamic email copy button and CV download
+- 🤖 Custom pixel-style illustrations
+- 🎨 Themed with consistent color variables and custom fonts
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, Vite
+- **Styling:** CSS3 with custom variables & animations
+- **Icons:** React Icons
+- **Form Handling:** EmailJS
+- **Deployment:** Vercel
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/vandan09/vandan-portfolio.git
+cd vandan-portfolio
